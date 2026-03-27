@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> PDF Plagiarism Detector </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #c3dafe, #e0f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(145deg, #93c5fd, #bfdbfe);
+            padding: 45px;
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            margin-bottom: 30px;
+            font-weight: 400;
+            color: #1e3a8a;
+        }
+
+        .file-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 15px;
+            color: #1e3a8a;
+        }
+
+        input[type="file"] {
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            background: #1e3a8a;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            margin-top: 25px;
+            font-weight: 500;
+            word-wrap: break-word;
+            color: #1e3a8a;
+        }
+
+        @media (max-width: 480px) {
+            .file-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="file"] {
+                margin-top: 8px;
+                width: 100%;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> PDF Plagiarism Detector </h1>
+
+        <div class="subtitle">
+            Upload two PDF files to analyze similarity and detect possible plagiarism.
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="file-group">
+                <label> Select First File </label>
+                <input type="file" name="f1" accept=".pdf" required/>
+            </div>
+
+            <div class="file-group">
+                <label> Select Second File </label>
+                <input type="file" name="f2" accept=".pdf" required/>
+            </div>
+
+            <input type="submit" value="Find Plagiarism Level"/>
+        </form>
+
+        <h2>{{ msg }}</h2>
+    </div>
+</body>
+</html>
