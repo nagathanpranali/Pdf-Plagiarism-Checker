@@ -2,6 +2,7 @@ PDF Plagiarism Checker App
 
 A web application that compares two PDF documents and detects plagiarism using text similarity techniques.
  
+
 Check out the live website https://pdf-plagiarism-checker.onrender.com/
 
 Features
